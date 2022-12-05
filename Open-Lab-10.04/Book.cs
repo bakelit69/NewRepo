@@ -12,11 +12,32 @@ namespace Open_Lab_10._04
         private int pages;
         private string category;
         private string author;
-        private int releaseDate;
-
+        private int releaseDate;   
+    
         public Book()
         {
+            title = "-1";
+            pages = -1;
+            category = "-1";
+            author = "-1";
+            releaseDate = -1;
+        }
 
+        public Book(string sTitle, int sPages)
+        {
+            this.title = sTitle;
+            this.pages = sPages;
+            category = "-1";
+            author = "-1";
+            releaseDate = -1;
+        }
+        public Book(string sTitle, int sPages, string sCategory, string sAuthor, int sReleaseDate)
+        {
+            this.title = sTitle;
+            this.pages = sPages;
+            this.category = sCategory;
+            this.author = sAuthor;
+            this.releaseDate = sReleaseDate;
         }
         public string Title { get { return title; } set { title = value; } }
 
@@ -48,7 +69,7 @@ namespace Open_Lab_10._04
         }
         public override string ToString()
         {
-            return String.Format($"{title}\n{pages}\n{category}\n{author}\n{releaseDate}");
+            return String.Format($"\n{title}\n{pages}\n{category}\n{author}\n{releaseDate}\n");
         }
     }
 }
